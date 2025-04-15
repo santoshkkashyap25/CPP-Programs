@@ -48,12 +48,19 @@ int main()
     cout << "cin input: " << title1 << "\n";
 	//  cin is very inefficient method as it ignores all chars after first white space
 
+
+    cin>>ws; // Clears leftover whitespace from the stream before the next input
+
     char title2[50];
     cin.get(title2, 10); // reads up to 9 characters
     cout << "cin.get input: " << title2 << "\n";
     // cin.get(var_name ,size) uesd but not useful as memory allocated earlier.
 
 	// So string object is used as it allows proper memory management.(Dynamic Allocation).
+    string title;
+    getline(cin >> ws, title);  // Reads full line with leading whitespace ignored
+    cout<< "title: "<<title<<"\n";
+
     string s = "hello World ";
     string combined = s + s;
     combined[5] = '4'; // modify character
